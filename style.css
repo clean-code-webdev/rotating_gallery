@@ -45,11 +45,19 @@ body {
   position: relative;
   -webkit-animation: rotate-parent linear 30s infinite;
           animation: rotate-parent linear 30s infinite;
-  width: 50rem;
-  height: 50rem;
-  border-radius: 50%;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  border-radius: 50%;
+  background: darkblue;
+  width: calc(50rem / 1.6);
+  height: calc(50rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent {
+    width: 50rem;
+    height: 50rem;
+  }
 }
 
 #parent:hover {
@@ -66,9 +74,9 @@ body {
 #parent #center-child,
 #parent .children {
   position: absolute;
+  cursor: pointer;
   -webkit-animation: rotate-children linear 30s infinite;
           animation: rotate-children linear 30s infinite;
-  cursor: pointer;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
@@ -82,10 +90,19 @@ body {
 }
 
 #parent #center-child {
-  width: 15rem;
-  height: 15rem;
-  top: calc(50% - 7.5rem);
-  left: calc(50% - 7.5rem);
+  width: calc(15rem / 1.6);
+  height: calc(15rem / 1.6);
+  top: calc(50% - 7.5rem / 1.6);
+  left: calc(50% - 7.5rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent #center-child {
+    width: 15rem;
+    height: 15rem;
+    top: calc(50% - 7.5rem);
+    left: calc(50% - 7.5rem);
+  }
 }
 
 #parent #center-child img {
@@ -99,8 +116,6 @@ body {
 }
 
 #parent .children {
-  width: 10rem;
-  height: 10rem;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,6 +128,15 @@ body {
           align-items: center;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  width: calc(10rem / 1.6);
+  height: calc(10rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent .children {
+    width: 10rem;
+    height: 10rem;
+  }
 }
 
 #parent .children .icon {
@@ -124,87 +148,183 @@ body {
 }
 
 #parent .children:hover {
-  width: 12rem;
-  height: 12rem;
+  width: calc(12rem / 1.6);
+  height: calc(12rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent .children:hover {
+    width: 12rem;
+    height: 12rem;
+  }
 }
 
 #parent .children:nth-last-of-type(1) {
-  top: 0rem;
-  left: calc(50% - 5rem);
+  top: calc(0rem / 1.6);
+  left: calc(50% - 5rem / 1.6);
 }
 
 #parent .children:nth-last-of-type(1):hover {
-  top: -1rem;
+  top: calc(-1rem / 1.6);
+  left: calc(50% - 6rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent .children:nth-last-of-type(1) {
+    top: 0rem;
+    left: calc(50% - 5rem);
+  }
+  #parent .children:nth-last-of-type(1):hover {
+    top: -1rem;
+    left: calc(50% - 6rem);
+  }
 }
 
 #parent .children:nth-last-of-type(2) {
-  top: calc(50% - 19rem);
-  left: calc(100% - 15.5rem);
+  top: calc(50% - 19rem / 1.6);
+  left: calc(100% - 15.5rem / 1.6);
 }
 
 #parent .children:nth-last-of-type(2):hover {
-  top: calc(50% - 20rem);
-  left: calc(100% - 16.5rem);
+  top: calc(50% - 20rem / 1.6);
+  left: calc(100% - 16.5rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent .children:nth-last-of-type(2) {
+    top: calc(50% - 19rem);
+    left: calc(100% - 15.5rem);
+  }
+  #parent .children:nth-last-of-type(2):hover {
+    top: calc(50% - 20rem);
+    left: calc(100% - 16.5rem);
+  }
 }
 
 #parent .children:nth-last-of-type(3) {
-  top: calc(50% - 5rem);
-  left: calc(100% - 10rem);
+  top: calc(50% - 5rem / 1.6);
+  left: calc(100% - 10rem / 1.6);
 }
 
 #parent .children:nth-last-of-type(3):hover {
-  top: calc(50% - 6rem);
-  left: calc(100% - 11rem);
+  top: calc(50% - 6rem / 1.6);
+  left: calc(100% - 11rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent .children:nth-last-of-type(3) {
+    top: calc(50% - 5rem);
+    left: calc(100% - 10rem);
+  }
+  #parent .children:nth-last-of-type(3):hover {
+    top: calc(50% - 6rem);
+    left: calc(100% - 11rem);
+  }
 }
 
 #parent .children:nth-last-of-type(4) {
-  top: calc(50% + 8rem);
-  left: calc(100% - 15.5rem);
+  top: calc(50% + 8rem / 1.6);
+  left: calc(100% - 15.5rem / 1.6);
 }
 
 #parent .children:nth-last-of-type(4):hover {
-  top: calc(50% + 7rem);
-  left: calc(100% - 16.5rem);
+  top: calc(50% + 7rem / 1.6);
+  left: calc(100% - 16.5rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent .children:nth-last-of-type(4) {
+    top: calc(50% + 8rem);
+    left: calc(100% - 15.5rem);
+  }
+  #parent .children:nth-last-of-type(4):hover {
+    top: calc(50% + 7rem);
+    left: calc(100% - 16.5rem);
+  }
 }
 
 #parent .children:nth-last-of-type(5) {
   bottom: 0;
-  left: calc(50% - 5rem);
+  left: calc(50% - 5rem / 1.6);
 }
 
 #parent .children:nth-last-of-type(5):hover {
-  bottom: -1rem;
-  left: calc(50% - 6rem);
+  bottom: calc(-1rem / 1.6);
+  left: calc(50% - 6rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent .children:nth-last-of-type(5) {
+    bottom: 0;
+    left: calc(50% - 5rem);
+  }
+  #parent .children:nth-last-of-type(5):hover {
+    bottom: -1rem;
+    left: calc(50% - 6rem);
+  }
 }
 
 #parent .children:nth-last-of-type(6) {
-  top: calc(50% + 8rem);
-  left: 5.5rem;
+  top: calc(50% + 8rem / 1.6);
+  left: calc(5.5rem / 1.6);
 }
 
 #parent .children:nth-last-of-type(6):hover {
-  top: calc(50% + 7rem);
-  left: 4.5rem;
+  top: calc(50% + 7rem / 1.6);
+  left: calc(4.5rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent .children:nth-last-of-type(6) {
+    top: calc(50% + 8rem);
+    left: 5.5rem;
+  }
+  #parent .children:nth-last-of-type(6):hover {
+    top: calc(50% + 7rem);
+    left: 4.5rem;
+  }
 }
 
 #parent .children:nth-last-of-type(7) {
-  top: calc(50% - 5rem);
+  top: calc(50% - 5rem / 1.6);
   left: 0;
 }
 
 #parent .children:nth-last-of-type(7):hover {
-  top: calc(50% - 6rem);
-  left: -1rem;
+  top: calc(50% - 6rem / 1.6);
+  left: calc(-1rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent .children:nth-last-of-type(7) {
+    top: calc(50% - 5rem);
+    left: 0;
+  }
+  #parent .children:nth-last-of-type(7):hover {
+    top: calc(50% - 6rem);
+    left: -1rem;
+  }
 }
 
 #parent .children:nth-last-of-type(8) {
-  top: calc(50% - 19rem);
-  left: 5.5rem;
+  top: calc(50% - 19rem / 1.6);
+  left: calc(5.5rem / 1.6);
 }
 
 #parent .children:nth-last-of-type(8):hover {
-  top: calc(50% - 20rem);
-  left: 4.5rem;
+  top: calc(50% - 20rem / 1.6);
+  left: calc(4.5rem / 1.6);
+}
+
+@media screen and (min-width: 768px) {
+  #parent .children:nth-last-of-type(8) {
+    top: calc(50% - 19rem);
+    left: 5.5rem;
+  }
+  #parent .children:nth-last-of-type(8):hover {
+    top: calc(50% - 20rem);
+    left: 4.5rem;
+  }
 }
 
 @-webkit-keyframes rotate-parent {
