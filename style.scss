@@ -1,0 +1,207 @@
+$animation-time: 30s;
+$icon-size: 4rem;
+$border: 0.1rem solid;
+
+$animation-state: paused; // ! rotation paused
+$animation-state: running; // ! rotation running
+
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sound {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+
+  #off {
+    display: block;
+  }
+  #on {
+    display: none;
+  }
+}
+
+#parent {
+  position: relative;
+  animation: rotate-parent linear $animation-time infinite;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+
+  animation-play-state: $animation-state; // ! rotation paused
+
+  &:hover {
+    animation-play-state: paused;
+
+    #center-child,
+    .children {
+      animation-play-state: paused;
+    }
+  }
+
+  #center-child,
+  .children {
+    position: absolute;
+    animation: rotate-children linear $animation-time infinite;
+    cursor: pointer;
+
+    animation-play-state: $animation-state; // ! rotation paused
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  #center-child {
+    width: 15rem;
+    height: 15rem;
+
+    top: calc(50% - 7.5rem);
+    left: calc(50% - 7.5rem);
+
+    img {
+      border-radius: 3rem;
+      transition: 0.2s;
+
+      &:hover {
+        border-radius: 0;
+      }
+    }
+  }
+
+  .children {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+
+    .icon {
+      font-size: $icon-size;
+    }
+
+    img {
+      border-radius: 50%;
+    }
+
+    &:hover {
+      width: 12rem;
+      height: 12rem;
+    }
+
+    &:nth-last-of-type(1) {
+      top: 0rem;
+      left: calc(50% - 5rem);
+
+      &:hover {
+        top: -1rem;
+        // left: calc(50% - 6rem);
+      }
+    }
+
+    &:nth-last-of-type(2) {
+      top: calc(50% - 19rem);
+      left: calc(100% - 15.5rem);
+
+      &:hover {
+        top: calc(50% - 20rem);
+        left: calc(100% - 16.5rem);
+      }
+    }
+
+    &:nth-last-of-type(3) {
+      top: calc(50% - 5rem);
+      left: calc(100% - 10rem);
+
+      &:hover {
+        top: calc(50% - 6rem);
+        left: calc(100% - 11rem);
+      }
+    }
+
+    &:nth-last-of-type(4) {
+      top: calc(50% + 8rem);
+      left: calc(100% - 15.5rem);
+
+      &:hover {
+        top: calc(50% + 7rem);
+        left: calc(100% - 16.5rem);
+      }
+    }
+
+    &:nth-last-of-type(5) {
+      bottom: 0;
+      left: calc(50% - 5rem);
+
+      &:hover {
+        bottom: -1rem;
+        left: calc(50% - 6rem);
+      }
+    }
+
+    &:nth-last-of-type(6) {
+      top: calc(50% + 8rem);
+      left: 5.5rem;
+
+      &:hover {
+        top: calc(50% + 7rem);
+        left: 4.5rem;
+      }
+    }
+
+    &:nth-last-of-type(7) {
+      top: calc(50% - 5rem);
+      left: 0;
+
+      &:hover {
+        top: calc(50% - 6rem);
+        left: -1rem;
+      }
+    }
+
+    &:nth-last-of-type(8) {
+      top: calc(50% - 19rem);
+      left: 5.5rem;
+
+      &:hover {
+        top: calc(50% - 20rem);
+        left: 4.5rem;
+      }
+    }
+  }
+}
+
+@keyframes rotate-parent {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-children {
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}

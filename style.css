@@ -1,0 +1,237 @@
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sound {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#sound #off {
+  display: block;
+}
+
+#sound #on {
+  display: none;
+}
+
+#parent {
+  position: relative;
+  -webkit-animation: rotate-parent linear 30s infinite;
+          animation: rotate-parent linear 30s infinite;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+#parent:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+#parent:hover #center-child,
+#parent:hover .children {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+#parent #center-child,
+#parent .children {
+  position: absolute;
+  -webkit-animation: rotate-children linear 30s infinite;
+          animation: rotate-children linear 30s infinite;
+  cursor: pointer;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+#parent #center-child img,
+#parent .children img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#parent #center-child {
+  width: 15rem;
+  height: 15rem;
+  top: calc(50% - 7.5rem);
+  left: calc(50% - 7.5rem);
+}
+
+#parent #center-child img {
+  border-radius: 3rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#parent #center-child img:hover {
+  border-radius: 0;
+}
+
+#parent .children {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#parent .children .icon {
+  font-size: 4rem;
+}
+
+#parent .children img {
+  border-radius: 50%;
+}
+
+#parent .children:hover {
+  width: 12rem;
+  height: 12rem;
+}
+
+#parent .children:nth-last-of-type(1) {
+  top: 0rem;
+  left: calc(50% - 5rem);
+}
+
+#parent .children:nth-last-of-type(1):hover {
+  top: -1rem;
+}
+
+#parent .children:nth-last-of-type(2) {
+  top: calc(50% - 19rem);
+  left: calc(100% - 15.5rem);
+}
+
+#parent .children:nth-last-of-type(2):hover {
+  top: calc(50% - 20rem);
+  left: calc(100% - 16.5rem);
+}
+
+#parent .children:nth-last-of-type(3) {
+  top: calc(50% - 5rem);
+  left: calc(100% - 10rem);
+}
+
+#parent .children:nth-last-of-type(3):hover {
+  top: calc(50% - 6rem);
+  left: calc(100% - 11rem);
+}
+
+#parent .children:nth-last-of-type(4) {
+  top: calc(50% + 8rem);
+  left: calc(100% - 15.5rem);
+}
+
+#parent .children:nth-last-of-type(4):hover {
+  top: calc(50% + 7rem);
+  left: calc(100% - 16.5rem);
+}
+
+#parent .children:nth-last-of-type(5) {
+  bottom: 0;
+  left: calc(50% - 5rem);
+}
+
+#parent .children:nth-last-of-type(5):hover {
+  bottom: -1rem;
+  left: calc(50% - 6rem);
+}
+
+#parent .children:nth-last-of-type(6) {
+  top: calc(50% + 8rem);
+  left: 5.5rem;
+}
+
+#parent .children:nth-last-of-type(6):hover {
+  top: calc(50% + 7rem);
+  left: 4.5rem;
+}
+
+#parent .children:nth-last-of-type(7) {
+  top: calc(50% - 5rem);
+  left: 0;
+}
+
+#parent .children:nth-last-of-type(7):hover {
+  top: calc(50% - 6rem);
+  left: -1rem;
+}
+
+#parent .children:nth-last-of-type(8) {
+  top: calc(50% - 19rem);
+  left: 5.5rem;
+}
+
+#parent .children:nth-last-of-type(8):hover {
+  top: calc(50% - 20rem);
+  left: 4.5rem;
+}
+
+@-webkit-keyframes rotate-parent {
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-parent {
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes rotate-children {
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+            transform: rotateZ(-360deg);
+  }
+}
+
+@keyframes rotate-children {
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+            transform: rotateZ(-360deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */
