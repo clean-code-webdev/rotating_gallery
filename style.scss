@@ -48,8 +48,6 @@ body {
   animation-play-state: $animation-state; // ! rotation paused
   border-radius: 50%;
 
-  background: darkblue;
-
   width: calc(50rem / #{$proportion});
   height: calc(50rem / #{$proportion});
 
