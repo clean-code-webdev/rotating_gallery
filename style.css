@@ -17,6 +17,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background: #202020;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
